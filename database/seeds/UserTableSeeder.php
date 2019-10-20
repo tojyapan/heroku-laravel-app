@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
         // DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('users')->truncate();
 
-        $faker = Factory::create();
+        // $faker = Factory::create();
 
         DB::table('users')->insert([
             [
@@ -23,21 +23,21 @@ class UserTableSeeder extends Seeder
                 'slug' => 'toya-kawakami',
                 'email' => 'tojyapan925@gmail.com',
                 'password' => bcrypt('secret'),
-                'bio' => $faker->text(rand(250, 300))
+                'bio' => 'I am Toya Kawakami'
             ],
             [
                 'name' => 'Jon Doe',
                 'slug' => 'jon-doe',
                 'email' => 'jondoe@example.com',
                 'password' => bcrypt('secret'),
-                'bio' => $faker->text(rand(250, 300))
+                'bio' => 'I am Jon Doe'
             ],
             [
-                'name' => 'nanashi gonbe',
+                'name' => 'Nanashi Gonbe',
                 'slug' => 'nanashi-gonbe',
                 'email' => 'nanashi@example.com',
                 'password' => bcrypt('secret'),
-                'bio' => $faker->text(rand(250, 300))
+                'bio' => 'I am Nanashi Gonbe'
             ]
         ]);
     }
