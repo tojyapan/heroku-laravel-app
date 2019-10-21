@@ -1,6 +1,3 @@
- # DEMO
- 
-
  
 # Features
  
@@ -35,7 +32,7 @@ http://ancient-beach-19989.herokuapp.com/home
 でログインページにいきますので、
 
 Editor
-mail: dondoe@example.com
+mail: jondoe@example.com
 pass: secret
 
 Author
@@ -55,5 +52,5 @@ https://github.com/tojyapan/my_blog
   
 * 作成者　Toya Kawakami
 
-* E-mail tojyapan925@gmail.com
+* E-mail　tojyapan925@gmail.com
  
