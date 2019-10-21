@@ -26,14 +26,14 @@
                     </div>
                 </article>
 
-                <!-- comments here -->
             </div>
-
-
         </div>
     </div>
+
+  <script src="/js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(".navbar-right li:first").removeClass("active");
+    $(".navbar-right li:nth-child(2)").addClass("active");
+  </script>
 @endsection
 
-<script type="text/javascript">
-  $(".active")
-</script>

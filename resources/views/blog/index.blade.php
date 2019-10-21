@@ -73,5 +73,13 @@
             @include('layouts.sidebar')
         </div>
     </div>
+    
+<script src="/js/jquery.min.js"></script>
 
+<script type="text/javascript">
+    $(".navbar-right li:first").addClass('active');
+    $(".navbar-right li:nth-child(2)").removeClass("active");
+</script>
+    
 @endsection
+
