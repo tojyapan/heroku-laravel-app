@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="wrapper">
     {{-- <header>
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
@@ -88,7 +88,7 @@
     </footer> --}}
 
     
-    <div id="copyrights" style="position: relative; width: 100%; bottom: 0;">
+    <div id="copyrights" style="position: absolute; width: 100%; bottom: 0;">
       <div class="container">
         <p>
           &copy; Copyrights <strong>Stanley</strong>. All Rights Reserved
