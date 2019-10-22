@@ -9,7 +9,7 @@ use App\User;
 
 class BlogController extends Controller
 {
-    protected $limit = 3;
+    protected $limit = 10;
 
     public function index()
     {
@@ -17,20 +17,24 @@ class BlogController extends Controller
             ->latestFirst()
             ->published()
             ->simplePaginate($this->limit);
-            
-        return view('blog.index', compact('posts'));
+
+        $categories = $this->getCategories();
+
+        return view('blog.index', compact('posts', 'categories'));
     }
 
     public function show(Post $post)
     {
         $post->increment('view_count');
+        $categories = $this->getCategories();
 
-        return view("blog.show", compact('post'));
+        return view("blog.show", compact('post', 'categories'));
     }
 
     public function category(Category $category)
     {
         $categoryName = $category->title;
+        $categories = $this->getCategories();
 
         $posts = $category->posts()
                         ->with('author')
@@ -38,12 +42,13 @@ class BlogController extends Controller
                         ->published()
                         ->simplePaginate($this->limit);
 
-        return view('blog.index', compact('posts', 'categoryName'));
+        return view('blog.index', compact('posts', 'categoryName', 'categories'));
     }
 
     public function author(User $author)
     {
         $authorName = $author->name;
+        $categories = $this->getCategories();
 
         $posts = $author->posts()
                         ->with('category')
@@ -51,12 +56,21 @@ class BlogController extends Controller
                         ->published()
                         ->simplePaginate($this->limit);
 
-        return view('blog.index', compact('posts', 'authorName'));
+        return view('blog.index', compact('posts', 'authorName', 'categories'));
 
     }
 
     public function about()
     {
-        return view('blog.about');
+        $categories = $this->getCategories();
+
+        return view('blog.about', compact('categories'));
     }
+
+    private function getCategories()
+    {
+        $categories = Category::all();
+        return $categories;
+    }
+
 }

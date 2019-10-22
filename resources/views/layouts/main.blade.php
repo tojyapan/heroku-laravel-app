@@ -7,10 +7,10 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
+    {{-- <header>
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,11 +33,41 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
         </nav>
-    </header>
+    </header> --}}
+
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          <a class="navbar-brand" href="{{ route('blog') }}">MYBLOG</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('blog') }}">Blog</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                @foreach ($categories as $category)
+                  <li><a href="{{ route('category', $category->slug) }}">{{ $category->title }}</a></li>
+                @endforeach
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </div>
+  
+
 
     @yield('content')
     
-    <footer>
+    {{-- <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -55,8 +85,27 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="/js/jquery.min.js"></script>
+    </footer> --}}
+
+    
+    <div id="copyrights" style="position: relative; width: 100%; bottom: 0;">
+      <div class="container">
+        <p>
+          &copy; Copyrights <strong>Stanley</strong>. All Rights Reserved
+        </p>
+        <div class="credits">
+          <!--
+            You are NOT allowed to delete the credit link to TemplateMag with free version.
+            You can delete the credit link only if you bought the pro version.
+            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/stanley-bootstrap-freelancer-template/
+            Licensing information: https://templatemag.com/license/
+          -->
+          Created with Stanley template by <a href="https://templatemag.com/">TemplateMag</a>
+        </div>
+      </div>
+    </div>
+    <!-- / copyrights -->
+
     <script src="/js/bootstrap.min.js"></script>
     
 </body>
