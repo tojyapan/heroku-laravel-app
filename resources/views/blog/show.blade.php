@@ -14,7 +14,9 @@
           <bd>{{ $post->date }}</bd>
         </p>
         <h4>{{ $post->title }}</h4>
-        <p><img class="img-responsive" src="img/blog01.jpg" alt=""></p>
+        @if ($post->image_url)
+          <img class="img-responsive" src="{{ $post->image_url }}" alt="">
+        @endif
         {!! $post->body_html !!}
         <br>
         <p>
