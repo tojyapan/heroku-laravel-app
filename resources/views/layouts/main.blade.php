@@ -38,19 +38,22 @@
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          {{-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            </button>
+            </button> --}}
           <a class="navbar-brand" href="{{ route('blog') }}">MYBLOG</a>
         </div>
-        <div class="navbar-collapse collapse">
+        {{-- <div class="navbar-collapse collapse"> --}}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('blog') }}">Blog</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
+            <li class="dropdown pc-only">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Category
+                <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu" role="menu">
                 @foreach ($categories as $category)
                   <li><a href="{{ route('category', $category->slug) }}">{{ $category->title }}</a></li>
@@ -58,7 +61,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        {{-- </div> --}}
         <!--/.nav-collapse -->
       </div>
     </div>
