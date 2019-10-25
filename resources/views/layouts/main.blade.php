@@ -45,7 +45,7 @@
             </button> --}}
           <a class="navbar-brand" href="{{ route('blog') }}">MYBLOG</a>
         </div>
-        <div class="navbar-collapse collapse">
+        {{-- <div class="navbar-collapse collapse"> --}}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('blog') }}">Blog</a></li>
@@ -58,7 +58,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        {{-- </div> --}}
         <!--/.nav-collapse -->
       </div>
     </div>
