@@ -45,15 +45,12 @@
             </button> --}}
           <a class="navbar-brand" href="{{ route('blog') }}">MYBLOG</a>
         </div>
-        {{-- <div class="navbar-collapse collapse"> --}}
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('blog') }}">Blog</a></li>
             <li class="dropdown pc-only">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Category
-                <span class="caret"></span>
-              </a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 @foreach ($categories as $category)
                   <li><a href="{{ route('category', $category->slug) }}">{{ $category->title }}</a></li>
@@ -61,7 +58,7 @@
               </ul>
             </li>
           </ul>
-        {{-- </div> --}}
+        </div>
         <!--/.nav-collapse -->
       </div>
     </div>
