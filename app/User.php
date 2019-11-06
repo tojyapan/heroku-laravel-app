@@ -48,7 +48,7 @@ class User extends Authenticatable
     public function gravatar()
     {
         $email = $this->email;
-        $default = "https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png";
+        $default = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi58a7HmdXlAhWbH3AKHbNfBNwQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.shareicon.net%2Ftag%2Fuser%3Fp%3D226&psig=AOvVaw2Fd6MnLkJwwDl4C9gx3nGY&ust=1573116437401622";
         $size = 100;
 
         return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
